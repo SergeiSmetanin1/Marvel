@@ -24,29 +24,27 @@
     padding: 5px 0;
 }
 
-.search-header img{
+.search-header img {
     width: 25px;
     filter: brightness(0) invert(1);
     cursor: pointer;
 }
 
+/* -----------MAIN---------- */
 .characters {
     padding: 50px 0;
+    position: relative;
 }
 
 
 .characters-block {
     cursor: pointer;
-    background-color: black;
+    background-color: #232222;
     color: white;
     font-size: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.characters-block h3 {
-    margin: 5px 0;
 }
 
 .characters-block:hover {
@@ -64,7 +62,87 @@
     gap: 10px;
 }
 
+.characters-block-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 0;
+}
 
+.information-characters {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: #232222;
+}
+
+.information-characters img {
+    width: 200px;
+
+}
+
+/* ывы */
+.information-characters {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.information-characters img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.information-characters h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.information-characters p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.characters-comics-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.characters-comics-item {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+.close-button:hover {
+    color: #666;
+}
+
+/* эээээ */
+
+/* ----------FOOTER---------- */
 .footer {
     background-color: black;
     font-family: Roboto;
@@ -77,7 +155,7 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .footer a {
