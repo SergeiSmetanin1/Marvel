@@ -71,12 +71,13 @@
 }
 
 .information-characters {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
     background-color: #232222;
+    z-index: 5;
 }
 
 .information-characters img {
@@ -84,6 +85,52 @@
 
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.skewed-button {
+  background-color: #FF0000; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px; 
+  font-weight: bold;
+  box-shadow: 0 4px #999;
+  transform: skewX(-20deg); 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.skewed-button::before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2); 
+  bottom: -5px; 
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  transform: skewX(20deg);
+  z-index: -1;
+}
+
+.skewed-button:hover {
+  background-color: #cc0000;
+}
+
+.skewed-button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(2px) skewX(-20deg);
+}
 /* ывы */
 .information-characters {
     max-width: 400px;
@@ -98,7 +145,7 @@
 .information-characters img {
     width: 100%;
     max-width: 200px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin-bottom: 15px;
 }
 
@@ -119,25 +166,43 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
-.characters-comics-item {
+.char__comics-item {
     color: #888;
     font-size: 14px;
     margin-bottom: 5px;
 }
+
 
 .close-button {
     position: absolute;
     top: 5px;
     right: 5px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 32px;
     color: #999;
 }
 
 .close-button:hover {
     color: #666;
+}
+
+.container-info {
+    width: 100%;
+    height: 150%;
+    top: -200px;
+    position: fixed;
+    display: none;
+}
+
+.container-info.shadow {
+    z-index: 10;
+    display: block;
+    background-color: #23222260;
 }
 
 /* эээээ */
@@ -201,4 +266,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
     gap: 10px;
+}
+
+.hide {
+    display: none;
 }

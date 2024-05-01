@@ -1,14 +1,17 @@
 const allCharactersContainer = document.querySelector(".characters-all");
 const moreCharactersBtn = document.querySelector("#moreCharacters");
 const informationCharacters = document.querySelector(".information-characters");
+const containerInfo = document.querySelector(".container-info");
+const searchHeader = document.querySelector(".search-header");
 
 const URL = "https://gateway.marvel.com:443/";
 const publicApiKey = "da07fc4da480f7252b7a2c23dad22b62";
 
 let limitCharacters = 8;
+let offsetCharacters = 0;
 
-const getData = async (limit) => {
-    const res = await fetch(`${URL}v1/public/characters?limit=${limit}&offset=0&apikey=${publicApiKey}`, {
+const getData = async (limit, offset) => {
+    const res = await fetch(`${URL}v1/public/characters?limit=${limit}&offset=${offset}&apikey=${publicApiKey}`, {
         method: "GET"
     })
 
@@ -44,8 +47,10 @@ const getDataCharacter = async (id) => {
         console.log(data.data.results[0].name);
         console.log(data.data.results[0]);
         const stories = data.data.results[0].stories.items;
-        console.log(stories);
         informationCharacters.innerHTML = "";
+        containerInfo.classList.add("shadow");
+        informationCharacters.classList.remove("hide");
+
         const item = `
             <span class="close-button">×</span>
             <img src="${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}" alt="character-img">
@@ -58,6 +63,11 @@ const getDataCharacter = async (id) => {
             </ul>
         `;
         informationCharacters.insertAdjacentHTML("beforeend", item);
+        document.querySelector(".close-button").addEventListener("click", () => {
+            informationCharacters.innerHTML = "";
+            containerInfo.classList.remove("shadow");
+            informationCharacters.classList.add("hide");
+        });
     }
 }
 
@@ -71,12 +81,27 @@ const getCharacter = (e) => {
     }
 }
 
+const searchCharacters = () => {
+    
+}
+
 getData(limitCharacters);
 
 moreCharactersBtn.addEventListener("click", () => {
-    limitCharacters = limitCharacters + 8;
-    allCharactersContainer.innerHTML = "";
-    getData(limitCharacters);
+    offsetCharacters = offsetCharacters + 8;
+    // allCharactersContainer.innerHTML = "";
+    getData(limitCharacters, offsetCharacters);
 })
 
-allCharactersContainer.addEventListener("click", getCharacter)
+allCharactersContainer.addEventListener("click", getCharacter);
+containerInfo.addEventListener("click", (e) => {
+    const target = e.target;
+    const cardInfo = target.closest(".information-characters");
+    if (!cardInfo) {
+        console.log(target);
+        informationCharacters.innerHTML = "";
+        containerInfo.classList.remove("shadow");
+        informationCharacters.classList.add("hide");
+    }
+})
+searchHeader.addEventListener("click", searchCharacters)
