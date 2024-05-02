@@ -89,7 +89,6 @@ getData(limitCharacters);
 
 moreCharactersBtn.addEventListener("click", () => {
     offsetCharacters = offsetCharacters + 8;
-    // allCharactersContainer.innerHTML = "";
     getData(limitCharacters, offsetCharacters);
 })
 
