@@ -6,16 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <title>Marvel</title>
 </head>
 
 <body>
     <header class="header">
         <div class="container-header">
-            <div class="user">
-
-            </div>
             <div class="logo-header">
                 <a href=""><svg width="130" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <rect fill="#EC1D24" width="100%" height="100%"></rect>
@@ -28,8 +24,9 @@
                         </path>
                     </svg></a>
             </div>
-            <div class="search-header">
-                <img src="images/search.png" alt="">
+            <div class="search-bar-header">
+                <input class="input-header" type="text">
+                <div class="search-container hide"></div>
             </div>
         </div>
     </header>
@@ -37,20 +34,19 @@
         <div class="information-characters hide">
         </div>
     </div>
-    <div class="search-container">
-        
-    </div>
-    <main class="shadow">
+
+    <main class="main shadow">
         <section class="characters">
             <div class="wrapper">
                 <div class="characters-all">
+                    <div id="loader" class="loader"></div>
                 </div>
                 <button class="skewed-button" id="moreCharacters">more</button>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="footer-container">
 
             <div class="logo-footer">
@@ -209,7 +205,7 @@
                                 </svg></span></a></li>
                 </ul>
             </nav>
-        </div>
+        </div> -->
     </footer>
     <script src="js/main.js"></script>
 </body>
