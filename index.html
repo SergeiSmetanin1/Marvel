@@ -24,6 +24,13 @@
                         </path>
                     </svg></a>
             </div>
+            <nav class="app__menu">
+                <ul>
+                    <li><a href="#" id="characters-switch">Characters</a></li>
+                    /
+                    <li><a href="#" id="comics-switch">Comics</a></li>
+                </ul>
+            </nav>
             <div class="search-bar-header">
                 <input class="input-header" type="text">
                 <div class="search-container hide"></div>
@@ -36,12 +43,22 @@
     </div>
 
     <main class="main shadow">
-        <section class="characters">
+        <div class="spider-man-bg"></div>
+        <div class="iron-man-bg"></div>
+        <section class="characters hide">
             <div class="wrapper">
                 <div class="characters-all">
-                    <div id="loader" class="loader"></div>
                 </div>
+                <div id="loader" class="loader"></div>
                 <button class="skewed-button" id="moreCharacters">more</button>
+            </div>
+        </section>
+        <section class="comics">
+            <div class="wrapper">
+                <div class="comics-all">
+                </div>
+                <div id="loader" class="loader"></div>
+                <button class="skewed-button" id="moreComics">more</button>
             </div>
         </section>
     </main>
@@ -205,8 +222,8 @@
                                 </svg></span></a></li>
                 </ul>
             </nav>
-        </div> -->
-    </footer>
+        </div> 
+    </footer>-->
     <script src="js/main.js"></script>
 </body>
 

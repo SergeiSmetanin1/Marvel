@@ -31,10 +31,6 @@
     padding: 5px 0;
 }
 
-.search-bar-header {
-    width: 270px;
-}
-
 .input-header {
     background-color: white;
     border: 2px solid rgb(255, 255, 255);
@@ -45,6 +41,8 @@
     font-family: Roboto;
     letter-spacing: 2px;
     outline: none;
+    width: 285px;
+    margin: 0 10px;
 }
 
 .search-container {
@@ -52,7 +50,6 @@
     flex-direction: column;
     align-items: start;
     width: 285px;
-    /* height: 100px; */
     max-height: 500px;
     overflow-y: scroll;
     color: black;
@@ -82,6 +79,26 @@
     width: 100%;
     padding: 5px;
     cursor: pointer;
+}
+
+.app__menu ul {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    list-style: none;
+    color: #fff;
+}
+
+.app__menu li {
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.app__menu a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* -----------MAIN---------- */
@@ -208,7 +225,8 @@
     max-width: 400px;
     min-width: 350px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -336,15 +354,37 @@
     gap: 10px;
 }
 
+.spider-man-bg {
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    background-image: url(https://pngimg.com/uploads/spider_man/spider_man_PNG56.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iron-man-bg {
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: -250px;
+    position: fixed;
+    background-image: url(https://pngimg.com/uploads/ironman/ironman_PNG2.png);
+    background-size: contain;
+    background-repeat: no-repeat; 
+}
+
+
 .hide {
     display: none;
 }
 
 .loader {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     margin: auto;
+    margin-top: 15px;
 }
 
 .loader:before,
@@ -376,7 +416,7 @@
 @media screen and (max-width: 425px) {
     .input-header {
         width: 200px;
-        margin: 0 10px;
+        
     }
 
     .main {
@@ -389,5 +429,9 @@
 
     .container-header {
         width: 90%;
+    }
+    
+    .iron-man-bg {
+        display: none;
     }
 }

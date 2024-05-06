@@ -6,6 +6,8 @@ const containerInfo = document.querySelector(".container-info");
 const inputHeader = document.querySelector('.input-header');
 const resultSearchContainer = document.querySelector(".search-container");
 const loader = document.getElementById('loader');
+const charactersSwitch = document.querySelector("#characters-switch");
+const comicsSwitch = document.querySelector("#comics-switch");
 
 const URL = "https://gateway.marvel.com:443/";
 const publicApiKey = "da07fc4da480f7252b7a2c23dad22b62";
@@ -14,7 +16,6 @@ let limitCharacters = 8;
 let offsetCharacters = 0;
 
 const getData = async (limit, offset) => {
-    // Показываем загрузчик
     showLoader();
 
     try {
@@ -44,18 +45,16 @@ const getData = async (limit, offset) => {
     } catch (error) {
         console.error("Error fetching data:", error);
     } finally {
-        // Скрываем загрузчик после получения ответа (успешного или с ошибкой)
         hideLoader();
     }
 }
 
 const showLoader = () => {
-    loader.style.display = 'block'; // Показываем загрузчик
+    loader.style.display = 'block'; 
 }
 
-// Функция для скрытия загрузчика
 const hideLoader = () => {
-    loader.style.display = 'none'; // Скрываем загрузчик
+    loader.style.display = 'none'; 
 }
 
 const getDataCharacter = async (id) => {
@@ -154,4 +153,10 @@ containerInfo.addEventListener("click", (e) => {
 inputHeader.addEventListener('input', getSearchData);
 inputHeader.addEventListener("click", getSearchData);
 main.addEventListener("click", mainContainer);
+charactersSwitch.addEventListener("click", ()=>{
+    console.log(5);
+});
+comicsSwitch.addEventListener("click", ()=>{
+    console.log(5);
+});
 getData(limitCharacters);
